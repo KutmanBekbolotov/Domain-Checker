@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Search for an image on Unsplash</h1>
-    <form action="{{route('image.post)}}" method="POST">
+    <form action="{{route('image.post')}}" method="POST">
     @csrf
     <label for="query">Search Query</label>
     <input type="text" name="query" id="query" required>
