@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insplash Image</title>
+    <title>Unsplash Image Result</title>
 </head>
 <body>
-    <h1>Search Result for "{{$query}}"</h1>
-    <img src="{{imageUrl}}" alt="Image from Unsplash">
-    <a href="{{route('image.get')}}"> Search again</a>
+    <h1>Result for: {{ $query }}</h1>
+
+    <!-- Отображение изображения -->
+    <img src="{{ $imageUrl }}" alt="Image" style="width: 100%; max-width: 600px;">
+    
+    <!-- Кнопка для возвращения на форму -->
+    <a href="{{ route('image.get') }}">Search again</a>
 </body>
 </html>
