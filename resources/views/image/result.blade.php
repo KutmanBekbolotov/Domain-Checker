@@ -9,7 +9,7 @@
     <h1>Result for: {{ $query }}</h1>
 
     <!-- Отображение изображения -->
-    <img src="{{ $imageUrl }}" alt="Image" style="width: 100%; max-width: 600px;">
+    <img src="{{ $imageUrl }}" alt="Image" style="width: 80%; max-width: 500px;">
     
     <!-- Кнопка для возвращения на форму -->
     <a href="{{ route('image.get') }}">Search again</a>
