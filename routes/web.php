@@ -9,3 +9,4 @@ Route::post('/check-domain', [DomainController::class, 'check'])->name('check.do
 
 Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');
 Route::post('/weather', [WeatherController::class, 'getWeather'])->name('weather.get');
+
