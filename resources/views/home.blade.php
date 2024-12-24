@@ -16,7 +16,6 @@
             <li><a href="{{ route('domain.index') }}">Domain Checker</a></li>
             <li><a href="{{ route('currencies.index') }}">Currency</a></li>
             
-
         </ul>
     </div>
 </body>
