@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\CurrencyController;
 
 Route::get('/', function () {
     return view('home');  
