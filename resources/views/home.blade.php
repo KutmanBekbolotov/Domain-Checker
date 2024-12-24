@@ -15,7 +15,7 @@
             <li><a href="{{ route('image.get') }}">Image Search</a></li>
             <li><a href="{{ route('domain.index') }}">Domain Checker</a></li>
             <li><a href="{{ route('currencies.index') }}">Currency</a></li>
-            
+            <li><a href="{{ route('videos.index') }}">YouTube Videos</a></li>
         </ul>
     </div>
 </body>

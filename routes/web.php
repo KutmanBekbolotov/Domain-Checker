@@ -5,7 +5,7 @@ use App\Http\Controllers\DomainController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\CurrencyController;
-
+use App\Http\Controllers\VideoController;
 Route::get('/', function () {
     return view('home');  
 })->name('home');
@@ -21,3 +21,5 @@ Route::post('/check-domain', [DomainController::class, 'check'])->name('check.do
 
 Route::get('/currency', [CurrencyController::class, 'index'])->name('currencies.index'); 
 Route::post('/currency', [CurrencyController::class, 'indexPost'])->name('currencies.post'); 
+
+Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
