@@ -8,7 +8,7 @@
 <body>
     <h1>Search for an Image</h1>
 
-    <!-- Форма для ввода запроса -->
+   
     <form action="{{ route('image.post') }}" method="POST">
         @csrf
         <label for="query">Enter search term (e.g., nature, city, etc.):</label>
