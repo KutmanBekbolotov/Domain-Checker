@@ -5,6 +5,7 @@ use App\Http\Controllers\DomainController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\MusicController;
 Route::get('/', function () {
@@ -25,5 +26,10 @@ Route::post('/currency', [CurrencyController::class, 'indexPost'])->name('curren
 
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 
-Route::get('/spotify', [SpotifyController::class, 'index'])->name('spotify.index');
-Route::post('/spotify', [SpotifyController::class, 'search'])->name('spotify.search');
+
+Route::get('/spotify', [MusicController::class, 'index'])->name('spotify.index');
+Route::post('/spotify', [MusicController::class, 'search'])->name('spotify.search');
+
+
+
+

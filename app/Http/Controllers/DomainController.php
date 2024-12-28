@@ -16,7 +16,7 @@ class DomainController extends Controller
     {
         $request->validate([
             'domain' => 'required|regex:/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-        ]);
+        ]); 
 
         $domain = $request->input('domain');
 
