@@ -30,7 +30,7 @@ class MusicController extends Controller
             }
             $token = $tokenResponse->json()['access_token'];
             $response = Http::withHeaders([
-                'Authorization' => 'Bearer' . $token,
+                'Authorization' => 'Bearer ' . $token,
                 
             ])->get('https://api.spotify.com/v1/search',[
                 'q' => $query,
@@ -48,10 +48,9 @@ class MusicController extends Controller
 
             }
             return redirect()->back()->with('error', 'failed to fetch');
-            
+             }
 
-           
-    }
+
 }
 
 
