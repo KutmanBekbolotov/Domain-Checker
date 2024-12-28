@@ -9,23 +9,34 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Spotify Music Search</h1>
-        <form action="{{ route('spotify.index') }}" method="GET" class="mt-4">
+
+        <!-- Форма для поиска -->
+        <form action="{{ route('spotify.search') }}" method="POST" class="mt-4">
+            @csrf <!-- Защита от CSRF-атак -->
             <div class="mb-3">
                 <label for="query" class="form-label">Enter Song or Artist:</label>
-                <input type="text" id="query" name="query" class="form-control" value="{{ request('query') }}" required>
+                <input type="text" id="query" name="query" class="form-control" value="{{ old('query') }}" required>
             </div>
             <button type="submit" class="btn btn-primary w-100">Search</button>
         </form>
 
-        @if(isset($searchResults))
+        <!-- Сообщение об ошибке -->
+        @if(session('error'))
+            <div class="alert alert-danger mt-3">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <!-- Результаты поиска -->
+        @if(isset($tracks))
             <div class="mt-5">
                 <h2>Search Results:</h2>
                 <div class="row">
-                    @foreach($searchResults['tracks']['items'] as $track)
+                    @foreach($tracks as $track)
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 @if(!empty($track['album']['images']))
-                                    <img src="{{ $track['album']['images'][0]['url'] }}" class="card-img-top" alt="Album Cover">
+                                    <img src="{{ $track['album']['images'][0]['url'] }}" class="card-img-top" alt="{{ $track['name'] }}">
                                 @endif
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $track['name'] }}</h5>
