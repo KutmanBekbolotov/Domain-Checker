@@ -17,6 +17,7 @@
             <li><a href="{{ route('currencies.index') }}">Currency</a></li>
             <li><a href="{{ route('videos.index') }}">YouTube Videos</a></li>
             <li><a href="{{ route('spotify.index') }}">Spotify Music</a></li>
+            <li><a href="{{ route('geo.index') }}">Geo</a></li>
         </ul>
     </div>
 </body>
