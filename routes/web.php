@@ -30,6 +30,9 @@ Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/spotify', [MusicController::class, 'index'])->name('spotify.index');
 Route::post('/spotify', [MusicController::class, 'search'])->name('spotify.search');
 
+Route::get('/map', [MapController::class, 'index'])->name('map.index');
+Route::post('/map', [MapController::class, 'search'])->name('map.search');
+
 
 
 
