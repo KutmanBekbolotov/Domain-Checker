@@ -7,6 +7,8 @@ use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\MapController;
+
 
 Route::get('/', function () {
     return view('home');  
