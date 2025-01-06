@@ -1,10 +1,11 @@
-<?php 
-namespace App\Models;
+<?php
 
-use illuminate\Database\Eloquent\Factories\HasFactory;
+namespace  App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model{
     use HasFactory;
-    protected $fillable = ['title', 'body,', 'image_url'];
+    protected $fillable = ['title', 'body', 'image_url'];
 }

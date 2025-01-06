@@ -8,6 +8,8 @@ use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\PostController;
+
 
 Route::get('/', function () {
     return view('home');  
@@ -33,6 +35,9 @@ Route::post('/spotify', [MusicController::class, 'search'])->name('spotify.searc
 
 Route::get('/map', [MapController::class, 'index'])->name('map.index');
 Route::post('/map', [MapController::class, 'search'])->name('map.search');
+
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 
 
