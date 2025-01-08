@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
+
+        Shema::table('posts', function (Blueprint $table){
+            $table->dropForeign(['user_id']);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**

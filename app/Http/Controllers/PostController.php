@@ -39,4 +39,14 @@ class PostController extends Controller
         $posts = Post::latest()->get();
         return view('posts.index', compact('posts'));
     }
+
+    public function  destroy(Post $post){
+        if($post->image_url){
+            \Storage::delete('public/' . $post->image_url);
+        }
+
+        $post->delete();
+
+        return redeirect()->route('posts.index')->with('success', 'POst deleted');
+    }
 }
