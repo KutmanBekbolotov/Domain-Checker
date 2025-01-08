@@ -18,6 +18,7 @@
             <li><a href="{{ route('videos.index') }}">YouTube Videos</a></li>
             <li><a href="{{ route('spotify.index') }}">Spotify Music</a></li>
             <li><a href="{{ route('map.index') }}">Map</a><li>
+            <li><a href="{{ route('posts.create') }}">Post</a><li>
         </ul>
     </div>
 </body>
