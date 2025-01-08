@@ -37,6 +37,7 @@ Route::post('/spotify', [MusicController::class, 'search'])->name('spotify.searc
 Route::get('/map', [MapController::class, 'index'])->name('map.index');
 Route::post('/map', [MapController::class, 'search'])->name('map.search');
 
+Route::get('/posts', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 

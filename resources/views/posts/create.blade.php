@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
+    <title>Posts</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Create New Post</h1>
+        <h1>All Posts</h1>
 
-        <!-- Сообщения об ошибках -->
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+        <!-- Уведомление об успешном добавлении -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
         @endif
 
-        <!-- Форма для добавления поста -->
-        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" required>
-            </div>
-            <div class="mb-3">
-                <label for="body" class="form-label">Description</label>
-                <textarea class="form-control" id="body" name="body" rows="5" required></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
-            </div>
-            <button type="submit" class="btn btn-primary">Add Post</button>
-        </form>
+        <!-- Лента постов -->
+        <div class="row">
+            @forelse ($posts as $post)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        @if ($post->image_url)
+                            <img src="{{ asset('storage/' . $post->image_url) }}" class="card-img-top" alt="Post Image">
+                        @endif
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $post->title }}</h5>
+                            <p class="card-text">{{ Str::limit($post->body, 100) }}</p>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <p>No posts available.</p>
+            @endforelse
+        </div>
+
+        <a href="{{ route('posts.create') }}" class="btn btn-primary mt-3">Add New Post</a>
     </div>
 </body>
 </html>
