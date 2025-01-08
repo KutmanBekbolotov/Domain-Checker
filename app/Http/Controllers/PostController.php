@@ -31,6 +31,8 @@ class PostController extends Controller
             'image_url' => $imagePath,
         ]);
 
+
+
         return redirect()->route('posts.index')->with('success', 'Post added successfully!');
     }
 
