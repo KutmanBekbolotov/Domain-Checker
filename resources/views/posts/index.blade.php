@@ -29,6 +29,12 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p class="card-text">{{ Str::limit($post->body, 100) }}</p>
+
+                                <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
                             </div>
                         </div>
                     </div>
